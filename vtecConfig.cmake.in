@@ -1,0 +1,17 @@
+################################################################################
+# Sophus source dir
+set( vtec_SOURCE_DIR "@CONFIG_SOURCE_DIR@")
+
+################################################################################
+# Sophus build dir
+set( vtec_DIR "@CONFIG_DIR@")
+
+################################################################################
+# Compute paths
+get_filename_component(vtec_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+
+set( vtec_INCLUDE_DIR  "@vtec_INCLUDE_DIR@" )
+set( vtec_INCLUDE_DIRS "@vtec_INCLUDE_DIR@" )
+
+set( vtec_LIBRARIES     "@vtec_LIBRARIES@" )
+set( vtec_LIBRARY       "@vtec_LIBRARIES@" )
