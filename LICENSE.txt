@@ -1,0 +1,12 @@
+LICENSE CONDITIONS 
+Copyright (2017), CTI Renato Archer, VisioTec Group. 
+
+This software is available for individual research use only. Any commercial
+use or redistribution of this software requires a license from CTI-Renato
+Archer.
+
+THE AUTHORS MAKE NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THIS
+SOFTWARE. 
+
+This license file must be retained with all copies of the software, including
+any modified or derivative versions.
