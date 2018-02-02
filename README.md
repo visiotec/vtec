@@ -1,11 +1,11 @@
 # VisioTec Libraries #
 
-This repository contains ready-to-use computer vision libraries developed at the VisioTec research group of the CTI Renato Archer. Further information about this group can be found [here](https://sites.google.com/site/geraldofsilveira/).
+This repository contains ready-to-use computer vision libraries developed at the VisioTec research group of the CTI Renato Archer. Further information about this group can be found [here](https://sites.google.com/site/geraldofsilveira/talks#TOC-Project-VISIOTEC-in-5-slides).
 
 
 ## Video Examples ##
 
-Click on the thumbnails to watch the videos on YouTube. These videos were created using the VisioTec libraries in our ROS environment. This environment is also publicly available [here](https://github.com/lukscasanova/vtec_ros).
+Click on the thumbnails to watch the videos on YouTube. These videos were created using the VisioTec Libraries in our ROS environment. This environment is also publicly available [here](https://github.com/lukscasanova/vtec_ros).
 
 * Intensity-based visual tracking with full 8-DoF homography
 
@@ -39,13 +39,13 @@ Using the latest release version allows you to use the most stable version of ou
 
 #### Cloning The Repository ####
 
-Cloning the repository allows you to be up-to-date with the latest - but possibly unstable - changes in our codebase. You should be familiar with Git to use this option. You can get more information about it in [here](https://help.github.com/articles/set-up-git). To clone and compile, use the following instructions.
+Cloning the repository allows you to be up-to-date with the latest -- but possibly unstable -- changes in our codebase. You should be familiar with Git to use this option. You can get more information about it in [here](https://help.github.com/articles/set-up-git). To clone and compile, use the following instructions.
 
 ```
 git clone https://github.com/lukscasanova/vtec.git
 ```
 
-**OPTIONAL**: If you want to use the *legacy* branch, which is based on the older c++98 standard, do the following command. Otherwise, skip this command.
+**OPTIONAL**: If you want to use the *legacy* branch, which is based on the older c++98 standard, do the following command. Otherwise, skip the next command.
 
 ```
 git checkout legacy
@@ -65,7 +65,7 @@ make
 
 ### Homography Optimizer ###
 
-This library estimates the homography and photometric parameters that minimize the pixel intensity-based error between the reference the current images. This algorithm is called Intensity-Based Global (IBG), as it is uses a direct approach to the estimation, i.e. with no intermediate steps such as feature extraction or matching, and is robust to global illumination changes. We also offer 3 variants of the algorithm, which make different assumptions about the motion constraints involved.
+This library estimates the homography and photometric parameters that minimize the pixel intensity-based error between the reference the current images. This algorithm is called Intensity-Based Global Homography Optimizer (IBGHO), as it is uses a direct approach to the estimation, i.e. with no intermediate steps such as feature extraction or matching, and is robust to global illumination changes. We also offer 3 variants of the algorithm, which make different assumptions about the motion constraints involved.
 
 #### Documentation and Citing ####
 
@@ -85,7 +85,7 @@ The technical report available [here](https://github.com/lukscasanova/vtec/blob/
 
 #### Examples ####
 
-After compiling, run the following commands from the root of the repository.
+After compiling, run the following commands *from the root* of the repository.
 
 * Homography Optimizer: 
 ```bash
