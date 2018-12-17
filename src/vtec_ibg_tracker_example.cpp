@@ -74,16 +74,21 @@ int main(int argc, char** argv){
          break;
       };
 
-
       /* run the optimization and record time*/
       score = myTracker.optimize(I, H, alpha, beta, VTEC::ZNCC_PREDICTOR);
-
+   
       if(score == -1.0){
          std::cout << "optimization failed" << std::endl;
          break;
       }else{
          std::cout << "Score: " << score << std::endl;
       }
+
+      std::cout << "Homography: " << std::endl;
+      printf("[%f, %f, %f\n%f, %f, %f\n%f, %f, %f]\n", 
+         H[0]/H[8], H[1]/H[8], H[2]/H[8],
+         H[3]/H[8], H[4]/H[8], H[5]/H[8],
+         H[6]/H[8], H[7]/H[8], H[8]/H[8]);
 
       myTracker.getCurrentTemplate(current_template);
 
