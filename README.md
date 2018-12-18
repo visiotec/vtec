@@ -2,7 +2,6 @@
 
 This repository contains ready-to-use computer vision libraries developed at the VisioTec research group of the CTI Renato Archer. Further information about this group can be found [here](https://sites.google.com/site/geraldofsilveira/talks#TOC-Project-VISIOTEC-in-5-slides).
 
-
 ## Video Examples ##
 
 Click on the thumbnails to watch the videos on YouTube. These videos were created using the VisioTec Libraries in our ROS environment. This environment is also publicly available [here](https://github.com/lukscasanova/vtec_ros).
@@ -14,7 +13,6 @@ Click on the thumbnails to watch the videos on YouTube. These videos were create
 * Intensity-based visual tracking with affine 6-DoF homography
 
 [![YouTube](https://img.youtube.com/vi/W-7otD3THM4/0.jpg)](https://www.youtube.com/watch?v=W-7otD3THM4)
-
 
 ## Installation ##
 
@@ -65,6 +63,7 @@ make
 
 ### Homography Optimizer ###
 
+<<<<<<< HEAD
 This library estimates the homography and photometric parameters that minimize the pixel intensity-based error between the reference the current images. This algorithm is called Intensity-Based Global Homography Optimizer (IBGHO), as it is uses a direct approach to the estimation, i.e. with no intermediate steps such as feature extraction or matching, and is robust to global illumination changes. We also offer 3 variants of the algorithm, which make different assumptions about the motion constraints involved.
 
 #### Documentation and Citing ####
@@ -87,6 +86,7 @@ The technical report available [here](https://github.com/lukscasanova/vtec/blob/
 
 After compiling, run the following commands *from the root* of the repository.
 
+
 * Homography Optimizer: 
 ```bash
   $ ./build/vtec_ibg_optimize_homography_example
@@ -97,6 +97,7 @@ After compiling, run the following commands *from the root* of the repository.
   $ ./build/vtec_ibg_tracker_example
 ```
 
+<<<<<<< HEAD
 More details on the examples can be found on the [technical report](https://github.com/lukscasanova/vtec/blob/master/vtec_ibgho_RR.pdf).
 
 
@@ -115,7 +116,6 @@ More details on the examples can be found on the [technical report](https://gith
 
 This software is being made available for research purposes only.  See
 the [LICENSE](LICENSE.txt) file in this directory for conditions of use.
-
 
 ## Bugs & Feature Requests
 
