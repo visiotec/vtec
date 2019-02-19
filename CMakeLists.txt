@@ -3,29 +3,31 @@ project(vtec)
 
 SET(CMAKE_VERBOSE_MAKEFILE ON)
 
-add_definitions(-std=c++11)
+add_definitions(-std=c++11 -fPIC)
 
 set(CMAKE_BUILD_TYPE Release)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 include_directories(include)
 
-find_library(VTEC_CORE
-	NAMES libvtec_core.a
+find_library(VTEC
+	NAMES libhomography_optimizer.so
 	HINTS ${PROJECT_SOURCE_DIR}/lib)
 
-find_library(VTEC_HOMOGRAPHY_OPTIMIZER
-	NAMES libhomography_optimizer.a
-	HINTS ${PROJECT_SOURCE_DIR}/lib)
+find_package(OpenCV)
 
-add_executable(vtec_ibg_tracker_example src/vtec_ibg_tracker_example.cpp)
-target_link_libraries(vtec_ibg_tracker_example ${VTEC_HOMOGRAPHY_OPTIMIZER} ${VTEC_CORE})
+add_executable(ibg_tracker_example src/ibg_tracker_example.cpp)
+target_link_libraries(ibg_tracker_example ${VTEC} ${OpenCV_LIBRARIES})
 
-add_executable(vtec_ibg_optimize_homography_example src/vtec_ibg_optimize_homography_example.cpp)
-target_link_libraries(vtec_ibg_optimize_homography_example ${VTEC_HOMOGRAPHY_OPTIMIZER} ${VTEC_CORE})
+add_executable(ibg_tracker_with_predictor_example src/ibg_tracker_with_predictor_example.cpp)
+target_link_libraries(ibg_tracker_with_predictor_example ${VTEC} ${OpenCV_LIBRARIES})
+
+add_executable(ibg_tracker_robust_example src/ibg_tracker_robust_example.cpp)
+target_link_libraries(ibg_tracker_robust_example ${VTEC} ${OpenCV_LIBRARIES})
+
 
 # GET_TARGET_PROPERTY( FULL_LIBRARY_NAME ${PROJECT_NAME} LOCATION )
-SET(vtec_LIBRARIES ${VTEC_HOMOGRAPHY_OPTIMIZER} ${VTEC_CORE} )
+SET(vtec_LIBRARIES ${VTEC_HOMOGRAPHY_OPTIMIZER} )
 SET(vtec_LIBRARY_DIR ${PROJECT_BINARY_DIR} )
 SET(vtec_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include")
 CONFIGURE_FILE( ${CMAKE_CURRENT_SOURCE_DIR}/vtecConfig.cmake.in
@@ -34,5 +36,4 @@ CONFIGURE_FILE( ${CMAKE_CURRENT_SOURCE_DIR}/vtecConfig.cmake.in
 export(PACKAGE vtec)
 
 INSTALL(DIRECTORY include/homography_optimizer DESTINATION ${CMAKE_INSTALL_PREFIX}/include FILES_MATCHING PATTERN "*.h" )
-INSTALL(DIRECTORY include/vtec_core DESTINATION ${CMAKE_INSTALL_PREFIX}/include FILES_MATCHING PATTERN "*.h" )
 INSTALL(FILES ${vtec_LIBRARIES} ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib )
