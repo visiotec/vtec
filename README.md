@@ -90,14 +90,10 @@ After compiling, run the following commands *from the root* of the repository.
 
 * Visual Tracking:
 ```
-  $ ./build/ibg_tracker_example
-```
-* Visual Tracking with Predictor:
-```
   $ ./build/ibg_tracker_with_predictor_example
 ```
 
-* Robust to Partial Occlusion:
+* Visual Tracking Robust to Partial Occlusion:
 ```
   $ ./build/ibg_tracker_robust_example
 
