@@ -25,6 +25,9 @@ target_link_libraries(ibg_tracker_with_predictor_example ${VTEC} ${OpenCV_LIBRAR
 add_executable(ibg_tracker_robust_example src/ibg_tracker_robust_example.cpp)
 target_link_libraries(ibg_tracker_robust_example ${VTEC} ${OpenCV_LIBRARIES})
 
+add_executable(ibg_optimize_homography_example src/ibg_optimize_homography_example.cpp)
+target_link_libraries(ibg_optimize_homography_example ${VTEC} ${OpenCV_LIBRARIES})
+
 
 # GET_TARGET_PROPERTY( FULL_LIBRARY_NAME ${PROJECT_NAME} LOCATION )
 SET(vtec_LIBRARIES ${VTEC_HOMOGRAPHY_OPTIMIZER} )
