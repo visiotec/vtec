@@ -16,9 +16,6 @@ find_library(VTEC
 
 find_package(OpenCV)
 
-add_executable(ibg_tracker_example src/ibg_tracker_example.cpp)
-target_link_libraries(ibg_tracker_example ${VTEC} ${OpenCV_LIBRARIES})
-
 add_executable(ibg_tracker_with_predictor_example src/ibg_tracker_with_predictor_example.cpp)
 target_link_libraries(ibg_tracker_with_predictor_example ${VTEC} ${OpenCV_LIBRARIES})
 
