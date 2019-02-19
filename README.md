@@ -14,6 +14,10 @@ Click on the thumbnails to watch the videos on YouTube. These videos were create
 
 [![YouTube](https://img.youtube.com/vi/W-7otD3THM4/0.jpg)](https://www.youtube.com/watch?v=W-7otD3THM4)
 
+* Robust to Partial Occlusion Intensity-based visual tracking with full 8-DoF homography
+
+[![YouTube](https://img.youtube.com/vi/H0RptGYu9UA/0.jpg)](https://www.youtube.com/watch?v=H0RptGYu9UA)
+
 ## Installation ##
 
 ### System Requirements ###
@@ -24,8 +28,7 @@ To compile and use that branch, you must satisfy the following requirements:
 * GCC version 5.4.1 or later
 * CMake version 2.8.3 or later
 * Git
-
-If you use an older system, we offer the [*legacy*](https://github.com/lukscasanova/vtec/tree/legacy) branch, which is based on c++98 standard.
+* OpenCV 3.3.1
 
 ### Download and Compiling ###
 
@@ -43,11 +46,6 @@ Cloning the repository allows you to be up-to-date with the latest -- but possib
 git clone https://github.com/lukscasanova/vtec.git
 ```
 
-**OPTIONAL**: If you want to use the *legacy* branch, which is based on the older c++98 standard, do the following command. Otherwise, skip the next command.
-
-```
-git checkout legacy
-```
 
 Compile the examples code with the following commands:
 
@@ -85,15 +83,24 @@ The technical report available [here](https://github.com/lukscasanova/vtec/blob/
 
 After compiling, run the following commands *from the root* of the repository.
 
-
 * Homography Optimizer: 
-```bash
-  $ ./build/vtec_ibg_optimize_homography_example
+```
+  $ ./build/ibg_optimize_homography_example
 ```
 
 * Visual Tracking:
-```bash
-  $ ./build/vtec_ibg_tracker_example
+```
+  $ ./build/ibg_tracker_example
+```
+* Visual Tracking with Predictor:
+```
+  $ ./build/ibg_tracker_with_predictor_example
+```
+
+* Robust to Partial Occlusion:
+```
+  $ ./build/ibg_tracker_robust_example
+
 ```
 
 More details on the examples can be found on the [technical report](https://github.com/lukscasanova/vtec/blob/master/vtec_ibgho_RR.pdf).
