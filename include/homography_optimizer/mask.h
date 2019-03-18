@@ -15,7 +15,14 @@ private:
   float sampling_rate_;
 
 public:
-  bool* mask;
+  /** Constructors **/
+  ImageMask();
+
+  ImageMask(size_t size, float sampling_rate = 1.0);
+
+  ImageMask(const ImageMask& old);
+
+  ~ImageMask();
 
   size_t size() const;
 
@@ -25,27 +32,20 @@ public:
 
   float samplingRate() const;
 
-  ImageMask();
-
-  ImageMask(size_t size, float sampling_rate = 1.0);
-
-  ImageMask(const ImageMask& old);
-
-  ~ImageMask();
-
   void reset(float sampling_rate = 1.0);
 
   cv::Mat sample(cv::Mat in);
 
   void maskFromThreshold(cv::Mat in, double threshold);
 
-  ImageMask getRobustMask(cv::Mat in);
-
   int checkZero(const cv::Mat pattern);
 
   cv::Mat toMat();
 
   void fromWeights(cv::Mat weights);
+
+  /* boolean array */
+  bool* mask;
 };
 }  // namespace VTEC
 

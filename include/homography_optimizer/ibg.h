@@ -78,22 +78,11 @@ public:
    */
   void setHomography(const cv::Mat& H);
 
-  // /**
-  //  * @brief      Gets the homography sequence.
-  //  *
-  //  * @return     The homography sequence.
-  //  */
-  std::vector<cv::Mat> getHomographySequence();
-
-  // /**
-  //  * @brief      Gets the number of iterations.
-  //  *
-  //  * @return     The number of iterations.
-  //  */
-  std::vector<int> getNbIterations();
-
-  // void virtual initialize(int max_nb_iter, int max_nb_pyr_level, double pixel_keep_rate) = 0;
-
+  /**
+   * @brief      Sets the robust flag
+   *
+   * @param[in]  robust_flag  The robust flag
+   */
   void setRobustFlag(bool robust_flag);
 
 protected:

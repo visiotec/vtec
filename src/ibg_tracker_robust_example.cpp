@@ -1,7 +1,7 @@
-#include <homography_optimizer/aux.h>
 #include <homography_optimizer/ibg.h>
-#include <iomanip>
+#include <homography_optimizer/aux.h>
 #include <opencv2/highgui/highgui.hpp>
+#include <iomanip>
 
 /* Bounding box left-top position  (x,y) in the first image */
 #define BBOX_POS_X 250
@@ -21,25 +21,20 @@
 /* Sampling rate, 1.0 means 100% of points are used */
 #define SAMPLING_RATE 1.0
 
-int main(int argc, char **argv) {
+int main(int argc, char** argv)
+{
   std::string directory = ".";
   std::string file_prefix = "/seq/im";
   int digit_width = 3;
 
-  int skip_image;
-
   std::ostringstream fileNameStream;
-  fileNameStream << directory << file_prefix << std::setw(digit_width)
-                 << std::setfill('0') << 0 << ".pgm";
+  fileNameStream << directory << file_prefix << std::setw(digit_width) << std::setfill('0') << 0 << ".pgm";
 
-  cv::Mat reference_image =
-      cv::imread(fileNameStream.str(), CV_LOAD_IMAGE_GRAYSCALE);
+  cv::Mat reference_image = cv::imread(fileNameStream.str(), CV_LOAD_IMAGE_GRAYSCALE);
 
   VTEC::IBGFullHomographyOptimizer optimizer;
-  optimizer.initialize(MAX_NB_ITERATION_PER_LEVEL, MAX_NB_PYR_LEVEL,
-                       SAMPLING_RATE);
-  optimizer.setReferenceTemplate(reference_image, BBOX_POS_X, BBOX_POS_Y,
-                                 BBOX_SIZE_X, BBOX_SIZE_Y);
+  optimizer.initialize(MAX_NB_ITERATION_PER_LEVEL, MAX_NB_PYR_LEVEL, SAMPLING_RATE);
+  optimizer.setReferenceTemplate(reference_image, BBOX_POS_X, BBOX_POS_Y, BBOX_SIZE_X, BBOX_SIZE_Y);
 
   // Set Robust Flag on
   optimizer.setRobustFlag(true);
@@ -61,17 +56,17 @@ int main(int argc, char **argv) {
   // Create occlusion
   cv::Rect rect(0, BBOX_POS_Y, 500, BBOX_SIZE_X / 4);
 
-  for (i = 0; i < 10; ++i) {
+  for (i = 0; i < 10; ++i)
+  {
     std::ostringstream fileNameStream;
-    fileNameStream << directory << file_prefix << std::setw(digit_width)
-                   << std::setfill('0') << i << ".pgm";
+    fileNameStream << directory << file_prefix << std::setw(digit_width) << std::setfill('0') << i << ".pgm";
 
     std::cout << fileNameStream.str() << std::endl;
 
-    cv::Mat current_image =
-        cv::imread(fileNameStream.str(), CV_LOAD_IMAGE_GRAYSCALE);
+    cv::Mat current_image = cv::imread(fileNameStream.str(), CV_LOAD_IMAGE_GRAYSCALE);
 
-    if (current_image.empty()) {
+    if (current_image.empty())
+    {
       std::cout << "End of image stream" << std::endl;
       break;
     }
@@ -79,8 +74,7 @@ int main(int argc, char **argv) {
     // Apply occlusion object
     cv::rectangle(current_image, rect, cv::Scalar(0, 0, 0), -1);
 
-    double score =
-        optimizer.optimize(current_image, H, alpha, beta, VTEC::ZNCC_PREDICTOR);
+    double score = optimizer.optimize(current_image, H, alpha, beta, VTEC::NO_PREDICTOR);
     std::cout << "RESULT" << std::endl;
     std::cout << "Score: " << score << std::endl;
 
@@ -88,12 +82,9 @@ int main(int argc, char **argv) {
     std::cout << "Homography: " << H << std::endl;
 
     VTEC::drawResult(current_image, H, score, BBOX_SIZE_X, BBOX_SIZE_Y);
-    cv::imwrite(directory + "/res/annotated_image_" + std::to_string(i) +
-                    ".pgm",
-                current_image);
+    cv::imwrite(directory + "/res/annotated_image_" + std::to_string(i) + ".pgm", current_image);
 
     optimizer.getCurrentTemplate(cur_template);
-    cv::imwrite(directory + "/res/cur_template_" + std::to_string(i) + ".pgm",
-                cur_template);
+    cv::imwrite(directory + "/res/cur_template_" + std::to_string(i) + ".pgm", cur_template);
   }
 }

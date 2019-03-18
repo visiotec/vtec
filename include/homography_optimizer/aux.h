@@ -14,10 +14,7 @@ double getMedian(cv::Mat mat);
 
 double getMadIntensity(const cv::Mat in);
 
-cv::Mat getTalwarMask(cv::Mat& in, double mad_number);
-
 cv::Mat getTalwarWeights(const cv::Mat& in);
-cv::Mat getLucasWeights(const cv::Mat& in);
 
 cv::Mat getTukeyWeights(const cv::Mat& in);
 

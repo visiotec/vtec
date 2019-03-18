@@ -27,7 +27,7 @@ int main(int argc, char** argv)
   std::string file_prefix = "/seq/im";
   int digit_width = 3;
 
-  int skip_image;
+  int skip_image = 3;
 
   std::ostringstream fileNameStream;
   fileNameStream << directory << file_prefix << std::setw(digit_width) << std::setfill('0') << 0 << ".pgm";
@@ -52,7 +52,7 @@ int main(int argc, char** argv)
   float alpha = 1.0;
   float beta = 0.0;
 
-  for (i = 0; i < 10; i += 3)
+  for (i = 0; i < 10; i += skip_image)
   {
     std::ostringstream fileNameStream;
     fileNameStream << directory << file_prefix << std::setw(digit_width) << std::setfill('0') << i << ".pgm";
