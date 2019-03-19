@@ -32,7 +32,7 @@ To compile and use that branch, you must satisfy the following requirements:
 
 ### Download and Compiling ###
 
-There are two ways of getting our libraries. You can either use the [releases](https://github.com/lukscasanova/vtec/releases) page or use **git** to clone the repo. We provide one version of our library based on the latest c++11 standard and another version based on the c++98 standard. The older c++98 version can be found on the *legacy* branch. 
+There are two ways of getting our libraries. You can either use the [releases](https://github.com/lukscasanova/vtec/releases) page or use **git** to clone the repo. We provide one version of our library based on the latest c++11 standard and another version based on the c++98 standard.
 
 #### Latest Release ####
 
