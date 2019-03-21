@@ -28,7 +28,7 @@ To compile and use that branch, you must satisfy the following requirements:
 * GCC version 5.4.1 or later
 * CMake version 2.8.3 or later
 * Git
-* OpenCV 3.3.1
+* OpenCV version 3.3.1 or later
 
 ### Download and Compiling ###
 
