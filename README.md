@@ -10,11 +10,7 @@ Click on the thumbnails to watch the videos on YouTube. These videos were create
 
 [![YouTube](https://img.youtube.com/vi/r7kZLqQ5xbI/0.jpg)](https://www.youtube.com/watch?v=r7kZLqQ5xbI)
 
-* Intensity-based visual tracking with affine 6-DoF homography
-
-[![YouTube](https://img.youtube.com/vi/W-7otD3THM4/0.jpg)](https://www.youtube.com/watch?v=W-7otD3THM4)
-
-* Robust to Partial Occlusion Intensity-based visual tracking with full 8-DoF homography
+* Robust intensity-based visual tracking with full 8-DoF homography and occlusion handling
 
 [![YouTube](https://img.youtube.com/vi/H0RptGYu9UA/0.jpg)](https://www.youtube.com/watch?v=H0RptGYu9UA)
 
@@ -76,7 +72,6 @@ The technical report available [here](https://github.com/lukscasanova/vtec/blob/
   year = {2017},
   address = {Brazil}
 }
-
 ```
 
 #### Examples ####
@@ -96,7 +91,6 @@ After compiling, run the following commands *from the root* of the repository.
 * Visual Tracking Robust to Partial Occlusion:
 ```
   $ ./build/ibg_tracker_robust_example
-
 ```
 
 More details on the examples can be found on the [technical report](https://github.com/lukscasanova/vtec/blob/master/vtec_ibgho_RR.pdf).
@@ -115,8 +109,8 @@ More details on the examples can be found on the [technical report](https://gith
 
 ## Licensing ##
 
-This software is being made available for research purposes only.  See
-the [LICENSE](LICENSE.txt) file in this directory for conditions of use.
+This software is being made available for research purposes only.  See the [LICENSE](LICENSE.txt) file in this directory for conditions of use.
+
 
 ## Bugs & Feature Requests
 
