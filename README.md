@@ -10,11 +10,7 @@ Click on the thumbnails to watch the videos on YouTube. These videos were create
 
 [![YouTube](https://img.youtube.com/vi/r7kZLqQ5xbI/0.jpg)](https://www.youtube.com/watch?v=r7kZLqQ5xbI)
 
-* Intensity-based visual tracking with affine 6-DoF homography
-
-[![YouTube](https://img.youtube.com/vi/W-7otD3THM4/0.jpg)](https://www.youtube.com/watch?v=W-7otD3THM4)
-
-* Robust to Partial Occlusion Intensity-based visual tracking with full 8-DoF homography
+* Robust intensity-based visual tracking with full 8-DoF homography and occlusion handling
 
 [![YouTube](https://img.youtube.com/vi/H0RptGYu9UA/0.jpg)](https://www.youtube.com/watch?v=H0RptGYu9UA)
 
@@ -28,11 +24,11 @@ To compile and use that branch, you must satisfy the following requirements:
 * GCC version 5.4.1 or later
 * CMake version 2.8.3 or later
 * Git
-* OpenCV 3.3.1
+* OpenCV version 3.3.1 or later
 
 ### Download and Compiling ###
 
-There are two ways of getting our libraries. You can either use the [releases](https://github.com/lukscasanova/vtec/releases) page or use **git** to clone the repo. We provide one version of our library based on the latest c++11 standard and another version based on the c++98 standard. The older c++98 version can be found on the *legacy* branch. 
+There are two ways of getting our libraries. You can either use the [releases](https://github.com/lukscasanova/vtec/releases) page or use **git** to clone the repo.
 
 #### Latest Release ####
 
@@ -61,7 +57,7 @@ make
 
 ### Homography Optimizer ###
 
-This library estimates the homography and photometric parameters that minimize the pixel intensity-based error between the reference the current images. This algorithm is called Intensity-Based Global Homography Optimizer (IBGHO), as it is uses a direct approach to the estimation, i.e. with no intermediate steps such as feature extraction or matching, and is robust to global illumination changes. We also offer 3 variants of the algorithm, which make different assumptions about the motion constraints involved.
+This library estimates the homography and photometric parameters that minimize the pixel intensity-based error between the reference the current images. This algorithm is called Intensity-Based Global Homography Optimizer (IBGHO), as it is uses a direct approach to the estimation, i.e. with no intermediate steps such as feature extraction or matching, and is robust to global illumination changes and partial occlusions. We also offer 3 variants of the algorithm, which make different assumptions about the motion constraints involved.
 
 #### Documentation and Citing ####
 
@@ -76,7 +72,6 @@ The technical report available [here](https://github.com/lukscasanova/vtec/blob/
   year = {2017},
   address = {Brazil}
 }
-
 ```
 
 #### Examples ####
@@ -96,7 +91,6 @@ After compiling, run the following commands *from the root* of the repository.
 * Visual Tracking Robust to Partial Occlusion:
 ```
   $ ./build/ibg_tracker_robust_example
-
 ```
 
 More details on the examples can be found on the [technical report](https://github.com/lukscasanova/vtec/blob/master/vtec_ibgho_RR.pdf).
@@ -115,8 +109,8 @@ More details on the examples can be found on the [technical report](https://gith
 
 ## Licensing ##
 
-This software is being made available for research purposes only.  See
-the [LICENSE](LICENSE.txt) file in this directory for conditions of use.
+This software is being made available for research purposes only.  See the [LICENSE](LICENSE.txt) file in this directory for conditions of use.
+
 
 ## Bugs & Feature Requests
 
