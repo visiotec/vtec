@@ -11,10 +11,16 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 include_directories(include)
 
 find_library(VTEC
-	NAMES libhomography_optimizer.so
+	NAMES libhomography_optimizer.a
 	HINTS ${PROJECT_SOURCE_DIR}/lib)
 
-find_package(OpenCV)
+find_package(OpenCV 3.2)
+message(${OpenCV_VERSION})
+if(${OpenCV_VERSION} VERSION_EQUAL "3.3.1") 
+	message(3.3.1)
+else(TRUE)
+	message(bla)
+endif()
 
 add_executable(ibg_tracker_with_predictor_example src/ibg_tracker_with_predictor_example.cpp)
 target_link_libraries(ibg_tracker_with_predictor_example ${VTEC} ${OpenCV_LIBRARIES})
