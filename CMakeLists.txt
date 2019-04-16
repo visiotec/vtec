@@ -10,16 +10,22 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 include_directories(include)
 
-find_library(VTEC
-	NAMES libhomography_optimizer.a
-	HINTS ${PROJECT_SOURCE_DIR}/lib)
+# find_library(VTEC
+# 	NAMES libhomography_optimizer.a
+# 	HINTS ${PROJECT_SOURCE_DIR}/lib)
 
-find_package(OpenCV 3.2)
+find_package(OpenCV EXACT 3.2)
 message(${OpenCV_VERSION})
 if(${OpenCV_VERSION} VERSION_EQUAL "3.3.1") 
-	message(3.3.1)
+	find_library(VTEC
+	NAMES libhomography_optimizer.so.kinetic
+	HINTS ${PROJECT_SOURCE_DIR}/lib)
+else(${OpenCV_VERSION} VERSION_EQUAL "3.2.0")
+	find_library(VTEC
+	NAMES libhomography_optimizer.so.melodic
+	HINTS ${PROJECT_SOURCE_DIR}/lib)
 else(TRUE)
-	message(bla)
+	message( FATAL_ERROR "You have an incompatible version of OpenCV. Contact the maintainer." )
 endif()
 
 add_executable(ibg_tracker_with_predictor_example src/ibg_tracker_with_predictor_example.cpp)
