@@ -61,7 +61,7 @@ This library estimates the homography and photometric parameters that minimize t
 
 #### Documentation and Citing ####
 
-The technical report available [here](https://github.com/lukscasanova/vtec/blob/master/vtec_ibgho_TR.pdf) describes the software and its working principles. If you use this software, please cite the technical report using:
+The technical report available [here](https://github.com/lukscasanova/vtec/blob/opencv/vtec_ibgho_TR.pdf) describes the software and its working principles. If you use this software, please cite the technical report using:
 
 ```
 @TechReport{nogueira2019,
