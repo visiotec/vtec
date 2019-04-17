@@ -59,6 +59,7 @@ make
 
 This library estimates the homography and photometric parameters that minimize the pixel intensity-based error between the reference the current images. This algorithm is called Intensity-Based Global Homography Optimizer (IBGHO), as it is uses a direct approach to the estimation, i.e. with no intermediate steps such as feature extraction or matching, and is robust to global illumination changes and partial occlusions. We also offer 3 variants of the algorithm, which make different assumptions about the motion constraints involved.
 
+
 #### Documentation and Citing ####
 
 The technical report available [here](https://github.com/lukscasanova/vtec/blob/opencv/vtec_ibgho_TR.pdf) describes the software and its working principles. If you use this software, please cite the technical report using:
@@ -94,6 +95,7 @@ After compiling, run the following commands *from the root* of the repository.
 ```
 
 More details on the examples can be found on the [technical report](https://github.com/lukscasanova/vtec/blob/opencv/vtec_ibgho_TR.pdf).
+
 
 
 ## Resources ##
