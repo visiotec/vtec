@@ -1,6 +1,6 @@
 # VisioTec Libraries #
 
-This repository contains ready-to-use computer vision libraries developed at the VisioTec research group of the CTI Renato Archer. Further information about this group can be found [here](https://sites.google.com/site/geraldofsilveira/talks#TOC-Project-VISIOTEC-in-5-slides).
+This repository contains ready-to-use computer vision C++ libraries developed at the VisioTec research group, CTI Renato Archer, Brazil. Further information about this group can be found [here](https://sites.google.com/site/geraldofsilveira/talks#TOC-Project-VISIOTEC-in-5-slides).
 
 ## Video Examples ##
 
@@ -18,7 +18,7 @@ Click on the thumbnails to watch the videos on YouTube. These videos were create
 
 ### System Requirements ###
 
-The master branch contains libraries that have been tested on Ubuntu 16.04. 
+The master branch contains libraries that have been tested both on Ubuntu 16.04 and on Ubuntu 18.04. 
 To compile and use that branch, you must satisfy the following requirements:
 
 * GCC version 5.4.1 or later
@@ -57,12 +57,12 @@ make
 
 ### Homography Optimizer ###
 
-This library estimates the homography and photometric parameters that minimize the pixel intensity-based error between the reference the current images. This algorithm is called Intensity-Based Global Homography Optimizer (IBGHO), as it is uses a direct approach to the estimation, i.e. with no intermediate steps such as feature extraction or matching, and is robust to global illumination changes and partial occlusions. We also offer 3 variants of the algorithm, which make different assumptions about the motion constraints involved.
+This library estimates the homography and photometric parameters that minimize the pixel intensity-based error between the reference the current images. This algorithm is called Intensity-Based Homography Optimizer (IBHO), as it is uses a direct approach to the estimation, i.e. with no intermediate steps such as feature extraction or matching, and is robust to global illumination changes and partial occlusions. We also offer 3 variants of the algorithm, which make different assumptions about the motion constraints.
 
 
 #### Documentation and Citing ####
 
-The technical report available [here](https://github.com/lukscasanova/vtec/blob/opencv/vtec_ibgho_TR.pdf) describes the software and its working principles. If you use this software, please cite the technical report using:
+The technical report available [here](https://github.com/lukscasanova/vtec/blob/master/vtec_ibgho_TR.pdf) describes the software and its working principles. If you use this software, please cite the technical report using:
 
 ```
 @TechReport{nogueira2019,
@@ -102,7 +102,7 @@ More details on the examples can be found on the [technical report](https://gith
 
 * Releases: [https://github.com/lukscasanova/vtec/releases](https://github.com/lukscasanova/vtec/releases)
 
-* IBGHO Technical Report: [vtec_ibgho_TR.pdf](https://github.com/lukscasanova/vtec/blob/opencv/vtec_ibgho_TR.pdf)
+* IBHO Technical Report: [vtec_ibgho_TR.pdf](https://github.com/lukscasanova/vtec/blob/master/vtec_ibgho_TR.pdf)
 
 * VisioTec ROS package: [https://github.com/lukscasanova/vtec_ros](https://github.com/lukscasanova/vtec_ros/)
 
