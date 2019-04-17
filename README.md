@@ -12,7 +12,7 @@ Click on the thumbnails to watch the videos on YouTube. These videos were create
 
 * Robust intensity-based visual tracking with full 8-DoF homography and occlusion handling
 
-[![YouTube](https://img.youtube.com/vi/H0RptGYu9UA/0.jpg)](https://www.youtube.com/watch?v=H0RptGYu9UA)
+[![YouTube](https://img.youtube.com/vi/qhAFe8IbIHc/0.jpg)](https://www.youtube.com/watch?v=qhAFe8IbIHc)
 
 ## Installation ##
 
@@ -24,7 +24,7 @@ To compile and use that branch, you must satisfy the following requirements:
 * GCC version 5.4.1 or later
 * CMake version 2.8.3 or later
 * Git
-* OpenCV version 3.2.0
+* OpenCV version 3.2.0 or later
 
 ### Download and Compiling ###
 
@@ -64,12 +64,12 @@ This library estimates the homography and photometric parameters that minimize t
 The technical report available [here](https://github.com/lukscasanova/vtec/blob/master/vtec_ibgho_TR.pdf) describes the software and its working principles. If you use this software, please cite the technical report using:
 
 ```
-@TechReport{nogueira2017,
+@TechReport{nogueira2019,
   author = {Lucas Nogueira and Ely de Paiva and Geraldo Silveira},
-  title  = {{VISIOTEC} Intensity-based Homography Optimization Software: Basic Theory and Use Cases},
-  number = {CTI-VTEC-TR-01-2017},
+  title  = {{VTEC} robust intensity-based homography optimization software},
+  number = {CTI-VTEC-TR-01-19},
   institution = {CTI},
-  year = {2017},
+  year = {2019},
   address = {Brazil}
 }
 ```
@@ -93,14 +93,14 @@ After compiling, run the following commands *from the root* of the repository.
   $ ./build/ibg_tracker_robust_example
 ```
 
-More details on the examples can be found on the [technical report](https://github.com/lukscasanova/vtec/blob/master/vtec_ibgho_RR.pdf).
+More details on the examples can be found on the [technical report](https://github.com/lukscasanova/vtec/blob/opencv/vtec_ibgho_TR.pdf).
 
 
 ## Resources ##
 
 * Releases: [https://github.com/lukscasanova/vtec/releases](https://github.com/lukscasanova/vtec/releases)
 
-* IBGHO Technical Report: [vtec_ibgho_TR.pdf](https://github.com/lukscasanova/vtec/blob/master/vtec_ibgho_TR.pdf)
+* IBGHO Technical Report: [vtec_ibgho_TR.pdf](https://github.com/lukscasanova/vtec/blob/opencv/vtec_ibgho_TR.pdf)
 
 * VisioTec ROS package: [https://github.com/lukscasanova/vtec_ros](https://github.com/lukscasanova/vtec_ros/)
 
