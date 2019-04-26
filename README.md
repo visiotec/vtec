@@ -113,7 +113,7 @@ More details on the examples can be found on the [technical report](https://gith
 
 This software is being made available for research purposes only.  See the [LICENSE](LICENSE.txt) file in this directory for conditions of use.
 
-## Acknowledgements ## 
+## Acknowledgment ## 
 This work was supported in part by the CAPES under Grant 88887.136349/2017-00, in part by the FAPESP under Grant 2017/22603-0, and in part by the InSAC (CNPq under Grant 465755/2014-3 and FAPESP under Grant 2014/50851-0).
 
 ## Bugs & Feature Requests
