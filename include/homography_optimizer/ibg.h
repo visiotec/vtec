@@ -126,6 +126,15 @@ public:
 
 }; /* class IBGFullHomographyOptimizer */
 
+class IBHomographyOptimizer : public IBGHomographyOptimizer
+{
+public:
+  IBHomographyOptimizer();
+
+  void initialize(int max_nb_iter = 5, int max_nb_pyr_level = 2, double sampling_rate = 1.0);
+
+}; /* class IBHomographyOptimizer */
+
 }  // namespace VTEC
 
 #endif

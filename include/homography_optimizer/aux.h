@@ -10,9 +10,9 @@
 
 namespace VTEC
 {
-double getMedian(cv::Mat mat);
+double getMedian(const cv::Mat& mat);
 
-double getMadIntensity(const cv::Mat in);
+double getMadIntensity(const cv::Mat& in);
 
 cv::Mat getTalwarWeights(const cv::Mat& in);
 
@@ -22,6 +22,8 @@ void warpPoints(cv::Point2f& p, cv::Mat H);
 
 void drawResult(cv::Mat& image, cv::Mat H, double score, int bbox_size_x, int bbox_size_y,
                 cv::Scalar color = cv::Scalar(255, 255, 255));
+
+void minMaxThreshold(cv::Mat& M, double min, double max);
 }  // namespace VTEC
 
 #endif /* VTEC_HOMOGRAPHY_OPTIMIZER_AUX_H */

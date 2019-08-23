@@ -38,11 +38,13 @@ public:
 
   void maskFromThreshold(cv::Mat in, double threshold);
 
-  int checkZero(const cv::Mat pattern);
+  int checkZero(const cv::Mat& pattern);
 
   cv::Mat toMat();
 
   void fromWeights(cv::Mat weights);
+
+  void setIndexFalse(int i);
 
   /* boolean array */
   bool* mask;
