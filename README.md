@@ -24,7 +24,16 @@ To compile and use that branch, you must satisfy the following requirements:
 * GCC version 5.4.1 or later
 * CMake version 2.8.3 or later
 * Git
-* OpenCV version 3.2.0 or later
+
+#### OpenCV ####
+
+This library depends on the OpenCV module xfeatures2d. For use with ROS Kinetic/Ubuntu 16.04, this module is automatically installed via official package repositories. For other cases, follow the instructions in these links:
+
+* [https://answers.ros.org/question/312669/ros-melodic-opencv-xfeatures2d/](https://answers.ros.org/question/312669/ros-melodic-opencv-xfeatures2d/)
+* [https://linuxize.com/post/how-to-install-opencv-on-ubuntu-18-04/](https://linuxize.com/post/how-to-install-opencv-on-ubuntu-18-04/)
+
+The dependency on xfeatures2d is necessary because of the Feature detection algorithm. If you just want to use the intensity-based algorithms, you may use the [v1](https://github.com/lukscasanova/vtec/releases/tag/v1.0.1) version of this repo.
+
 
 ### Download and Compiling ###
 
@@ -86,12 +95,22 @@ After compiling, run the following commands *from the root* of the repository.
 
 * Visual Tracking:
 ```
+  $ ./build/ibg_tracker_example
+```
+
+* Visual Tracking with Predictor:
+```
   $ ./build/ibg_tracker_with_predictor_example
 ```
 
 * Visual Tracking Robust to Partial Occlusion:
 ```
   $ ./build/ibg_tracker_robust_example
+```
+
+* Unified Visual Tracking:
+```
+  $ ./build/unified_tracker_example
 ```
 
 More details on the examples can be found on the [technical report](https://github.com/lukscasanova/vtec/blob/opencv/vtec_ibgho_TR.pdf).
