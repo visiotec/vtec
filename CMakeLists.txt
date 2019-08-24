@@ -14,7 +14,7 @@ find_library(VTEC
 	NAMES libhomography_optimizer.so
 	HINTS ${PROJECT_SOURCE_DIR}/lib)
 
-find_package(OpenCV 3.2)
+find_package(OpenCV REQUIRED COMPONENTS xfeatures2d)
 
 add_executable(ibg_tracker_example src/ibg_tracker_example.cpp)
 target_link_libraries(ibg_tracker_example ${VTEC} ${OpenCV_LIBRARIES})
@@ -27,6 +27,9 @@ target_link_libraries(ibg_tracker_robust_example ${VTEC} ${OpenCV_LIBRARIES})
 
 add_executable(ibg_optimize_homography_example src/ibg_optimize_homography_example.cpp)
 target_link_libraries(ibg_optimize_homography_example ${VTEC} ${OpenCV_LIBRARIES})
+
+add_executable(unified_tracker_example src/unified_tracker_example.cpp)
+target_link_libraries(unified_tracker_example ${VTEC} ${OpenCV_LIBRARIES})
 
 
 

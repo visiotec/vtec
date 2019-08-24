@@ -85,6 +85,10 @@ public:
    */
   void setRobustFlag(bool robust_flag);
 
+  /************************
+  **** Debug Functions ****
+  ************************/
+
 protected:
   /* Pointer to implementation class */
   IBGHomographyOptimizerImpl* optimizer;
