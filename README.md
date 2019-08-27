@@ -14,6 +14,10 @@ Click on the thumbnails to watch the videos on YouTube. These videos were create
 
 [![YouTube](https://img.youtube.com/vi/qhAFe8IbIHc/0.jpg)](https://www.youtube.com/watch?v=qhAFe8IbIHc)
 
+* Unified intensity- and feature-based visual tracking with full 8-DoF homography
+
+[![YouTube](https://img.youtube.com/vi/oArw449qp1E/0.jpg)](https://www.youtube.com/watch?v=oArw449qp1E)
+
 ## Installation ##
 
 ### System Requirements ###
@@ -66,8 +70,7 @@ make
 
 ### Homography Optimizer ###
 
-This library estimates the homography and photometric parameters that minimize the pixel intensity-based error between the reference the current images. This algorithm is called Intensity-Based Homography Optimizer robust to Global illumination changes (IBGHO), as it is uses a direct approach to the estimation, i.e. with no intermediate steps such as feature extraction or matching, and is robust to global illumination changes and partial occlusions. We also offer 3 variants of the algorithm, which make different assumptions about the motion constraints.
-
+This library contains a set of classes that estimate the homography that relates two images of a planar scene.
 
 #### Documentation and Citing ####
 
