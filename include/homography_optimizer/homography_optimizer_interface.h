@@ -19,6 +19,8 @@ public:
   virtual double optimize(const cv::Mat& curr_image, cv::Mat& H, float& alpha, float& beta,
                           PredictorType predictor) = 0;
 
+  virtual void setRobustFlag(bool robust_flag) = 0;
+
 }; /* class HomographyOptimizerInterface */
 
 }  // namespace VTEC
