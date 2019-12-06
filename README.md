@@ -4,7 +4,7 @@ This repository contains ready-to-use computer vision C++ libraries developed at
 
 ## Video Examples ##
 
-Click on the thumbnails to watch the videos on YouTube. These videos were created using the VisioTec Libraries in our ROS environment. This environment is also publicly available [here](https://github.com/lukscasanova/vtec_ros).
+Click on the thumbnails to watch the videos on YouTube. These videos were created using the VisioTec Libraries in our ROS environment. This environment is also publicly available [here](https://github.com/visiotec/vtec_ros).
 
 * Intensity-based visual tracking with full 8-DoF homography
 
@@ -36,23 +36,23 @@ This library depends on the OpenCV module xfeatures2d. For use with ROS Kinetic/
 * [https://answers.ros.org/question/312669/ros-melodic-opencv-xfeatures2d/](https://answers.ros.org/question/312669/ros-melodic-opencv-xfeatures2d/)
 * [https://linuxize.com/post/how-to-install-opencv-on-ubuntu-18-04/](https://linuxize.com/post/how-to-install-opencv-on-ubuntu-18-04/)
 
-The dependency on xfeatures2d is necessary because of the Feature detection algorithm. If you just want to use the intensity-based algorithms, you may use the [v1](https://github.com/lukscasanova/vtec/releases/tag/v1.0.1) version of this repo.
+The dependency on xfeatures2d is necessary because of the Feature detection algorithm. If you just want to use the intensity-based algorithms, you may use the [v1](https://github.com/visiotec/vtec/releases/tag/v1.0.2) version of this repo.
 
 
 ### Download and Compiling ###
 
-There are two ways of getting our libraries. You can either use the [releases](https://github.com/lukscasanova/vtec/releases) page or use **git** to clone the repo.
+There are two ways of getting our libraries. You can either use the [releases](https://github.com/visiotec/vtec/releases) page or use **git** to clone the repo.
 
 #### Latest Release ####
 
-Using the latest release version allows you to use the most stable version of our code. Follow the instructions on the [releases](https://github.com/lukscasanova/vtec/releases) page for the installation details.
+Using the latest release version allows you to use the most stable version of our code. Follow the instructions on the [releases](https://github.com/visiotec/vtec/releases) page for the installation details.
 
 #### Cloning The Repository ####
 
 Cloning the repository allows you to be up-to-date with the latest -- but possibly unstable -- changes in our codebase. You should be familiar with Git to use this option. You can get more information about it in [here](https://help.github.com/articles/set-up-git). To clone and compile, use the following instructions.
 
 ```
-git clone https://github.com/lukscasanova/vtec.git
+git clone https://github.com/visiotec/vtec.git
 ```
 
 
@@ -74,7 +74,7 @@ This library contains a set of classes that estimate the homography that relates
 
 #### Documentation and Citing ####
 
-The technical report available [here](https://github.com/lukscasanova/vtec/blob/master/vtec_ibgho_TR.pdf) describes the software and its working principles. If you use this software, please cite the technical report using:
+The technical report available [here](https://github.com/visiotec/vtec/blob/master/vtec_ibgho_TR.pdf) describes the software and its working principles. If you use this software, please cite the technical report using:
 
 ```
 @TechReport{nogueira2019,
@@ -116,17 +116,17 @@ After compiling, run the following commands *from the root* of the repository.
   $ ./build/unified_tracker_example
 ```
 
-More details on the examples can be found on the [technical report](https://github.com/lukscasanova/vtec/blob/opencv/vtec_ibgho_TR.pdf).
+More details on the examples can be found on the [technical report](https://github.com/visiotec/vtec/blob/opencv/vtec_ibgho_TR.pdf).
 
 
 
 ## Resources ##
 
-* Releases: [https://github.com/lukscasanova/vtec/releases](https://github.com/lukscasanova/vtec/releases)
+* Releases: [https://github.com/visiotec/vtec/releases](https://github.com/visiotec/vtec/releases)
 
-* IBGHO Technical Report: [vtec_ibgho_TR.pdf](https://github.com/lukscasanova/vtec/blob/master/vtec_ibgho_TR.pdf)
+* IBGHO Technical Report: [vtec_ibgho_TR.pdf](https://github.com/visiotec/vtec/blob/master/vtec_ibgho_TR.pdf)
 
-* VisioTec ROS package: [https://github.com/lukscasanova/vtec_ros](https://github.com/lukscasanova/vtec_ros/)
+* VisioTec ROS package: [https://github.com/visiotec/vtec_ros](https://github.com/visiotec/vtec_ros/)
 
 * Geraldo Silveira's website: [https://sites.google.com/site/geraldofsilveira/](https://sites.google.com/site/geraldofsilveira/)
 
@@ -140,4 +140,4 @@ This work was supported in part by the CAPES under Grant 88887.136349/2017-00, i
 
 ## Bugs & Feature Requests
 
-Please report bugs and request features using the [Issue Tracker](https://github.com/lukscasanova/vtec/issues).
+Please report bugs and request features using the [Issue Tracker](https://github.com/visiotec/vtec/issues).
