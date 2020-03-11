@@ -21,6 +21,11 @@ public:
 
   virtual void setRobustFlag(bool robust_flag) = 0;
 
+  //virtual std::vector<int> getNbIterations() = 0;
+
+  //virtual std::vector<cv::Mat> getHomographySequence() = 0;
+
+  //virtual std::vector<int> getNbFeatures() = 0;
 }; /* class HomographyOptimizerInterface */
 
 }  // namespace VTEC

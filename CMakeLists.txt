@@ -10,11 +10,29 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 include_directories(include)
 
-find_library(VTEC
-	NAMES libhomography_optimizer.so
+find_package(OpenCV)
+#find_package(OpenCV REQUIRED COMPONENTS xfeatures2d)
+
+	
+if ( OPENCV_XFEATURES2D_FOUND )
+    message("XFeatures2D found in OpenCV - SURF/Flann version will be used for feature based matching")
+    
+    find_library(VTEC
+	NAMES libhomography_optimizer.so 
+	HINTS ${PROJECT_SOURCE_DIR}/lib)
+	
+	#set ( VTEC ${VTEC_CORE} "${VTEC_EXTRAFEATURES}" )
+
+else()
+    message("XFeatures2D NOT found in OpenCV - ORB/BruteForce version will be used for feature based matching")
+    
+    find_library(VTEC
+	NAMES libhomography_optimizer_noXfeatures.so 
 	HINTS ${PROJECT_SOURCE_DIR}/lib)
 
-find_package(OpenCV REQUIRED COMPONENTS xfeatures2d)
+endif()
+
+message("VTEClib = " ${VTEC}) 
 
 add_executable(ibg_tracker_example src/ibg_tracker_example.cpp)
 target_link_libraries(ibg_tracker_example ${VTEC} ${OpenCV_LIBRARIES})
@@ -32,7 +50,6 @@ add_executable(unified_tracker_example src/unified_tracker_example.cpp)
 target_link_libraries(unified_tracker_example ${VTEC} ${OpenCV_LIBRARIES})
 
 
-
 # GET_TARGET_PROPERTY( FULL_LIBRARY_NAME ${PROJECT_NAME} LOCATION )
 SET(vtec_LIBRARIES ${VTEC} )
 SET(vtec_LIBRARY_DIR ${PROJECT_BINARY_DIR} )
@@ -43,4 +60,4 @@ CONFIGURE_FILE( ${CMAKE_CURRENT_SOURCE_DIR}/vtecConfig.cmake.in
 export(PACKAGE vtec)
 
 INSTALL(DIRECTORY include/homography_optimizer DESTINATION ${CMAKE_INSTALL_PREFIX}/include FILES_MATCHING PATTERN "*.h" )
-INSTALL(FILES ${vtec_LIBRARIES} ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib )
+INSTALL(FILES ${vtec_LIBRARIES} DESTINATION ${CMAKE_INSTALL_PREFIX}/lib )
