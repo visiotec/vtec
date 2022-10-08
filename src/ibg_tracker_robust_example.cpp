@@ -30,7 +30,7 @@ int main(int argc, char** argv)
   std::ostringstream fileNameStream;
   fileNameStream << directory << file_prefix << std::setw(digit_width) << std::setfill('0') << 0 << ".pgm";
 
-  cv::Mat reference_image = cv::imread(fileNameStream.str(), CV_LOAD_IMAGE_GRAYSCALE);
+  cv::Mat reference_image = cv::imread(fileNameStream.str(),       cv::IMREAD_GRAYSCALE); //old version CV_LOAD_IMAGE_GRAYSCALE);
 
   VTEC::IBGFullHomographyOptimizer optimizer;
   optimizer.initialize(MAX_NB_ITERATION_PER_LEVEL, MAX_NB_PYR_LEVEL, SAMPLING_RATE);
@@ -63,7 +63,7 @@ int main(int argc, char** argv)
 
     std::cout << fileNameStream.str() << std::endl;
 
-    cv::Mat current_image = cv::imread(fileNameStream.str(), CV_LOAD_IMAGE_GRAYSCALE);
+    cv::Mat current_image = cv::imread(fileNameStream.str(),       cv::IMREAD_GRAYSCALE); //old version CV_LOAD_IMAGE_GRAYSCALE);
 
     if (current_image.empty())
     {

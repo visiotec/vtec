@@ -14,7 +14,10 @@ find_library(VTEC
 	NAMES libhomography_optimizer.so
 	HINTS ${PROJECT_SOURCE_DIR}/lib)
 
+find_package(OpenCV)
 find_package(OpenCV REQUIRED COMPONENTS xfeatures2d)
+message( "Opencv version found: " ${OpenCV_PACKAGE_VERSION} )
+message( "Opencv libraries found: " ${OpenCV_LIBRARIES} )
 
 add_executable(ibg_tracker_example src/ibg_tracker_example.cpp)
 target_link_libraries(ibg_tracker_example ${VTEC} ${OpenCV_LIBRARIES})

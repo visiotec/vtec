@@ -37,7 +37,8 @@ int main(int argc, char** argv)
   std::ostringstream refFileNameStream;
   refFileNameStream << directory << file_prefix << std::setw(digit_width) << std::setfill('0') << 0 << ".pgm";
 
-  cv::Mat reference_image = cv::imread(refFileNameStream.str(), CV_LOAD_IMAGE_GRAYSCALE);
+  cv::Mat reference_image = cv::imread(refFileNameStream.str(),
+      cv::IMREAD_GRAYSCALE); //old version CV_LOAD_IMAGE_GRAYSCALE);
   std::cout << refFileNameStream.str() << std::endl;
 
   ibg_optimizer.setReferenceTemplate(reference_image, BBOX_POS_X, BBOX_POS_Y, BBOX_SIZE_X, BBOX_SIZE_Y);
@@ -48,7 +49,7 @@ int main(int argc, char** argv)
   currFileNameStream << directory << file_prefix << std::setw(digit_width) << std::setfill('0') << 5 << ".pgm";
 
   std::cout << currFileNameStream.str() << std::endl;
-  cv::Mat current_image = cv::imread(currFileNameStream.str(), CV_LOAD_IMAGE_GRAYSCALE);
+  cv::Mat current_image = cv::imread(currFileNameStream.str(),       cv::IMREAD_GRAYSCALE); //old version CV_LOAD_IMAGE_GRAYSCALE);
 
   /* Optimization parameters */
   cv::Mat H(3, 3, CV_64F, cv::Scalar(0));
