@@ -35,9 +35,7 @@ add_executable(unified_tracker_example src/unified_tracker_example.cpp)
 target_link_libraries(unified_tracker_example ${VTEC} ${OpenCV_LIBRARIES})
 
 
-
 # GET_TARGET_PROPERTY( FULL_LIBRARY_NAME ${PROJECT_NAME} LOCATION )
-SET(vtec_LIBRARIES ${VTEC} )
 SET(vtec_LIBRARY_DIR ${PROJECT_BINARY_DIR} )
 SET(vtec_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include")
 CONFIGURE_FILE( ${CMAKE_CURRENT_SOURCE_DIR}/vtecConfig.cmake.in
@@ -46,4 +44,5 @@ CONFIGURE_FILE( ${CMAKE_CURRENT_SOURCE_DIR}/vtecConfig.cmake.in
 export(PACKAGE vtec)
 
 INSTALL(DIRECTORY include/homography_optimizer DESTINATION ${CMAKE_INSTALL_PREFIX}/include FILES_MATCHING PATTERN "*.h" )
-INSTALL(FILES ${vtec_LIBRARIES} ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib )
+INSTALL(DIRECTORY ${PROJECT_SOURCE_DIR}/lib/  DESTINATION ${CMAKE_INSTALL_PREFIX}/lib ) 
+# trailing / on source dir is needed: https://cmake.org/cmake/help/v3.16/command/install.html#installing-directories The last component of each directory name is appended to the destination directory but a trailing slash may be used to avoid this because it leaves the last component empty.
