@@ -128,7 +128,7 @@ More details on the examples can be found on the [technical report](https://gith
 
 * VisioTec ROS package: [https://github.com/visiotec/vtec_ros](https://github.com/visiotec/vtec_ros/)
 
-* Geraldo Silveira's website: [https://sites.google.com/site/geraldofsilveira/](https://sites.google.com/site/geraldofsilveira/)
+* Geraldo Silveira's website: [https://sites.google.com/view/geraldosilveira](https://sites.google.com/view/geraldosilveira)
 
 
 ## Licensing ##
